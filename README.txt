@@ -1,0 +1,1 @@
+To run this project is needed deploy the EJB-Example project.
