@@ -5,6 +5,11 @@ import javax.naming.NamingException;
 
 import br.com.fluentcode.ejb.remote.CalculatorRemote;
 
+/**
+ * 
+ * Stateless Session Bean Client
+ *
+ */
 public class CalculatorClient {
 	
 	public static void main(String[] args) throws NamingException {

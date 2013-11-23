@@ -5,6 +5,11 @@ import javax.naming.NamingException;
 
 import br.com.fluentcode.ejb.remote.ShoppingCartRemote;
 
+/**
+ * 
+ * Stateful Session Bean Client
+ *
+ */
 public class ShoppingCartClient {
 	
 	public static void main(String[] args) throws NamingException {
