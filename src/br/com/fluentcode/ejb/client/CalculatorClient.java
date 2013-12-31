@@ -14,7 +14,8 @@ public class CalculatorClient {
 	
 	public static void main(String[] args) throws NamingException {
 		InitialContext ctx = new InitialContext();
-		CalculatorRemote calculator = (CalculatorRemote) ctx.lookup("EJB-Example/CalculatorBean!br.com.fluentcode.ejb.remote.CalculatorRemote");
+		String jndiName = "EJB-Example/CalculatorBean!" + CalculatorRemote.class.getName();
+		CalculatorRemote calculator = (CalculatorRemote) ctx.lookup(jndiName);
 		int value = calculator.add(2, 3);
 		System.out.println(value);
 	}

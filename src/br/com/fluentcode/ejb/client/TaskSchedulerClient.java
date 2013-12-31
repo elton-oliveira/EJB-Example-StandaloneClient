@@ -12,7 +12,8 @@ public class TaskSchedulerClient {
 	
 	public static void main(String[] args) throws NamingException {
 		InitialContext ctx = new InitialContext();
-		TaskSchedulerRemote scheduler =  (TaskSchedulerRemote) ctx.lookup("EJB-Example/TaskSchedulerBean!br.com.fluentcode.ejb.remote.TaskSchedulerRemote");
+		String jndiName = "EJB-Example/TaskSchedulerBean!" + TaskSchedulerRemote.class.getName();
+		TaskSchedulerRemote scheduler =  (TaskSchedulerRemote) ctx.lookup(jndiName);
 		if("scheduleTask".equals(args[0])){
 			Calendar calendar = Calendar.getInstance();
 			calendar.add(Calendar.SECOND, 15);

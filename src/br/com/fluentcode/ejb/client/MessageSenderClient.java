@@ -8,7 +8,8 @@ public class MessageSenderClient {
 	
 	public static void main(String[] args) throws Exception {
 		InitialContext ctx = new InitialContext();
-		MessageSenderRemote sender =  (MessageSenderRemote) ctx.lookup("EJB-Example/MessageSenderBean!br.com.fluentcode.ejb.remote.MessageSenderRemote");
+		String jndiName = "EJB-Example/MessageSenderBean!" + MessageSenderRemote.class.getName();
+		MessageSenderRemote sender =  (MessageSenderRemote) ctx.lookup(jndiName);
 		sender.sendMessage("Planning is essential!");
 		System.out.println("Message sent successfully!");
 	}

@@ -14,7 +14,8 @@ public class ShoppingCartClient {
 	
 	public static void main(String[] args) throws NamingException {
 		InitialContext ctx = new InitialContext();
-		ShoppingCartRemote cart =  (ShoppingCartRemote) ctx.lookup("EJB-Example/ShoppingCartBean!br.com.fluentcode.ejb.remote.ShoppingCartRemote");
+		String jndiName = "EJB-Example/ShoppingCartBean!" + ShoppingCartRemote.class.getName();
+		ShoppingCartRemote cart =  (ShoppingCartRemote) ctx.lookup(jndiName);
 		cart.addItem("Pen");
 		cart.addItem("Notebook");
 		for(String item : cart.getItems()){
